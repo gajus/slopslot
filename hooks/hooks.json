@@ -1,0 +1,4 @@
+{
+  "description": "Local slot reels, prompt events, and the /slopslot command",
+  "modules": ["./register.js"]
+}
