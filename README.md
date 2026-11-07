@@ -1,8 +1,8 @@
 # SlopSlot
 
-**Turn slop into jackpot.**
+**A slot machine inside Claude Code.**
 
-A slot machine inside Claude Code. Every prompt pulls the lever: three reels
+Every prompt pulls the lever: three reels
 spin while Claude works, then stop one at a time. Collect points, climb the
 ranks, unlock badges, and occasionally get paid for absolutely no skill.
 
