@@ -13,13 +13,20 @@ ranks, unlock badges, and occasionally get paid for absolutely no skill.
 You need **Claude Code 2.1.319 or later**. No dependencies, API keys, or build
 step are required.
 
-From this repository's root, start a session with the plugin loaded:
+Install from your terminal:
 
 ```sh
-claude --plugin-dir .
+claude plugin install slopslot --marketplace gajus/slopslot
 ```
 
-Accept any workspace or plugin trust prompts Claude Code shows. Send a normal
+Or run this inside Claude Code:
+
+```text
+/plugin install slopslot --marketplace gajus/slopslot
+```
+
+Start a new Claude Code session after installation. Accept any workspace or
+plugin trust prompts Claude Code shows. Send a normal
 prompt and the reels will spin automatically. For a spin without asking Claude
 to do anything, run:
 
@@ -37,8 +44,14 @@ The cabinet opens in a pane, with a Spin button on wider displays. Close it
 with Escape or its Close control to return to the display above your prompt.
 Check `/plugin` → Installed if SlopSlot does not appear.
 
-`--plugin-dir` loads the plugin for that session. This repository is a local
-plugin; it is not currently published in a marketplace.
+To update to a new release:
+
+```sh
+claude plugin update slopslot@gajus-slopslot
+```
+
+SlopSlot is distributed through the marketplace in
+[`gajus/slopslot`](https://github.com/gajus/slopslot). It does not require npm.
 
 ## A little casino for your context window
 
@@ -125,6 +138,16 @@ prompt content visible.
 
 ## Development
 
+Clone the repository and load your working copy for one session:
+
+```sh
+git clone https://github.com/gajus/slopslot.git
+cd slopslot
+claude --plugin-dir .
+```
+
+Validate the plugin and run its tests:
+
 ```sh
 claude plugin validate .
 claude plugin test
@@ -139,6 +162,7 @@ Reloading also resets SlopSlot's session progress.
 | File | Purpose |
 | --- | --- |
 | `.claude-plugin/plugin.json` | Plugin name and version |
+| `.claude-plugin/marketplace.json` | Marketplace catalog for installation from GitHub |
 | `hooks/hooks.json` | Hooks module entry point |
 | `hooks/register.js` | Prompt hooks, animation timers, commands, and UI |
 | `hooks/art.js` | Terminal pixel art and Desktop SVG artwork |

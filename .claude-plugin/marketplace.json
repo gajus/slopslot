@@ -1,0 +1,13 @@
+{
+  "name": "gajus-slopslot",
+  "owner": {
+    "name": "gajus"
+  },
+  "plugins": [
+    {
+      "name": "slopslot",
+      "source": "./",
+      "description": "An animated slot machine inside Claude Code with XP, streaks, gifts, and badges."
+    }
+  ]
+}
